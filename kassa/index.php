@@ -82,9 +82,9 @@ if (isset($_SESSION['login'])) {
                                 <input type="button" name="btnbuy" value="Bestelling afronden"
                                     class="border p-8 bg-gray-400 rounded-lg text-xl w-full">
                             </a>
-                            <div class="border p-8 bg-gray-400 rounded-lg">
-                                <a href="delete.php">
-                                    <img src="../png/image.png" alt="Afbeelding" class="w-16 h-16">
+                            <div class="grid justify-center border bg-gray-400 rounded-lg">
+                                <a href="delete.php" class="m-auto">
+                                    <img src="../png/image.png" alt="Afbeelding" class="h-4/6 w-2/6 m-auto">
                                 </a>
                             </div>
                             </form>
