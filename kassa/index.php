@@ -31,13 +31,11 @@ if (isset($_SESSION['login'])) {
                 <div class="flex items-center justify-between ">
                     <a href="../logout.php"
                         class="bg-white text-red-500 hover:text-red-700 px-4 py-2 rounded shadow-md">Uitloggen</a>
-                    <a href="delete.php">
-                        <img src="../png/image.png" alt="Afbeelding" class="w-16 h-16">
-                    </a>
-                    <?php if($row['admin'] == 1) { ?>
-                    <a href="../Beheer" class="ml-auto">
-                        <h1 class="text-xl mx-5">Beheer</h1>
-                    </a>
+
+                    <?php if ($row['admin'] == 1) { ?>
+                        <a href="../Beheer" class="ml-auto">
+                            <h1 class="text-xl mx-5">Beheer</h1>
+                        </a>
                     <?php } ?>
                     <h1 class="text-xl">Kassa</h1>
                 </div>
@@ -82,8 +80,13 @@ if (isset($_SESSION['login'])) {
                             <input type="submit" name="btnadd" value="ADD" class="border p-8 bg-gray-400 rounded-lg text-xl">
                             <a href="betalen.php">
                                 <input type="button" name="btnbuy" value="Bestelling afronden"
-                                    class="border col-span-3 p-8 bg-gray-400 rounded-lg text-xl">
+                                    class="border p-8 bg-gray-400 rounded-lg text-xl w-full">
                             </a>
+                            <div class="border p-8 bg-gray-400 rounded-lg">
+                                <a href="delete.php">
+                                    <img src="../png/image.png" alt="Afbeelding" class="w-16 h-16">
+                                </a>
+                            </div>
                             </form>
                         </div>
                     </div>
@@ -122,13 +125,14 @@ if (isset($_SESSION['login'])) {
                             }
                         }
 
-
-                        $products = $_SESSION['producten'];
-                        echo '<div class="grid grid-cols-1 gap-4 border border-black-600 p-5">';
-                        foreach ($products as $key => $value) {
-                            echo "<div class='border p-4 bg-gray-200'>" . $value['aantal'] . " x " . $value['name'] . "</div>";
+                        if (isset($_SESSION['producten'])) {
+                            $products = $_SESSION['producten'];
+                            echo '<div class="grid grid-cols-1 gap-4 border border-black-600 p-5">';
+                            foreach ($products as $key => $value) {
+                                echo "<div class='border p-4 bg-gray-200'>" . $value['aantal'] . " x " . $value['name'] . "</div>";
+                            }
+                            echo '</div>';
                         }
-                        echo '</div>';
                     }
                     ?>
                 </div>
