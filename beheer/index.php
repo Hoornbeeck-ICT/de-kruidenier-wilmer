@@ -62,7 +62,7 @@ if (isset($_SESSION['login'])) {
                 </div>
             </header>
             <div class="flex h-full">
-                <div class="w-3/4 bg-[#F6EACA]">
+                <div class="w-3/4 bg-[#F6EACA] overflow-auto">
                     <?php
                     $sql = "SELECT * FROM products";
                     $result = mysqli_query($conn, $sql);

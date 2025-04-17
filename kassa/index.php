@@ -26,7 +26,7 @@ if (isset($_SESSION['login'])) {
             <script type="text/javascript" src="../script.js"></script>
         </head>
 
-        <body>
+        <body class="bg-[#F6EACA]">
             <header class=" p-4 bg-[#4CAF50]">
                 <div class="flex items-center justify-between ">
                     <a href="../logout.php"
@@ -54,7 +54,7 @@ if (isset($_SESSION['login'])) {
 
                         </div>
 
-                        <div class="grid grid-cols-3 gap-4 w-full">
+                        <div class="grid grid-cols-3 gap-4 w-full h-full">
                             <input type="button" name="btn1" id="btn1" value="1" onclick="btn('1')"
                                 class="border p-8 bg-gray-200 rounded-lg text-xl">
                             <input type="button" name="btn2" id="btn2" value="2" onclick="btn('2')"
